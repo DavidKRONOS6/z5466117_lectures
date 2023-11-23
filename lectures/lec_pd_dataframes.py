@@ -120,7 +120,7 @@ new_ser = pd.Series(data=[1,3,2], index=['a', 'c', 'b'])
 #print(new_ser) 
 
 # This will return 'False'
-#print(new_ser.is_monotonic_increasing) 
+print(new_ser.is_monotonic_increasing)
 
 # Sort the series based on the index
 sorted_ser  = new_ser.sort_index()

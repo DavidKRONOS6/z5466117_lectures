@@ -106,11 +106,11 @@ print("\nThis is the `df_nan` dataframe:")
 print(df_nan.info())
 
 # Convert dtypes
-#df_new = df_nan.convert_dtypes() 
-#print(df_new.info()) 
+df_new = df_nan.convert_dtypes()
+print(df_new.info())
 
-#print(df_new.loc['3000-01-01']) 
-#print(type(df_new.loc['3000-01-01', 'Bday'])) 
+print(df_new.loc['3000-01-01'])
+print(type(df_new.loc['3000-01-01', 'Bday']))
 
 
 # ----------------------------------------------------------------------------
@@ -136,22 +136,22 @@ df0.info()
 
 # A data frame with a strings as index labels
 
-#idx = ['2020-01-01', '2020-01-02', '2020-01-03']
-#df1 = pd.DataFrame(data, index=idx)
-#print('\nprint(df1) -->')
-#print(df1)
-#print('\ndf1.info() --> ')
-#df1.info()
+idx = ['2020-01-01', '2020-01-02', '2020-01-03']
+df1 = pd.DataFrame(data, index=idx)
+print('\nprint(df1) -->')
+print(df1)
+print('\ndf1.info() --> ')
+df1.info()
 #
 
 # A data frame with a datetime objs as index labels
 
-#idx_dt = pd.to_datetime(idx)
-#df2 = pd.DataFrame(data, index=idx_dt)
-#print('\nprint(df2) -->')
-#print(df2)
-#print('\ndf2.info() --> ')
-#df2.info()
+idx_dt = pd.to_datetime(idx)
+df2 = pd.DataFrame(data, index=idx_dt)
+print('\nprint(df2) -->')
+print(df2)
+print('\ndf2.info() --> ')
+df2.info()
 #
 
 

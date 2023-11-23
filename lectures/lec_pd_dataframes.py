@@ -63,28 +63,28 @@ bday_ser = pd.Series(data=bday, index=dates)
 #   Create a dataframe
 # ---------------------------------------------------------------------------- 
 # Data Frame with close and Bday columns
-df  = '?'
-#print(df) 
+df  = pd.DataFrame(data={'Close': prc_ser, 'Bday': bday_ser})
+print(df)
 
 
 # ---------------------------------------------------------------------------- 
 #   Accessing the indexes in a dataframe
 # ---------------------------------------------------------------------------- 
 # The attribute `columns` returns the column index
-#print(df.columns) 
-#print('The type of this index is', type(df.columns)) 
+print(df.columns)
+print('The type of this index is', type(df.columns))
 
 # We can get the series corresponding to a column index label
-#col0 = df['Close'] 
-#print(col0) 
+col0 = df['Close']
+print(col0)
 
 # Just like any series, you can access the index using:
-#print(col0.index) 
-#print(type(col0.index)) 
+print(col0.index)
+print(type(col0.index))
 
 # In fact, this corresponds to the Dataframe index as well
-#print(df.index) 
-#print(type(df.index)) 
+print(df.index)
+print(type(df.index))
 
 
 # ----------------------------------------------------------------------------
@@ -123,12 +123,12 @@ new_ser = pd.Series(data=[1,3,2], index=['a', 'c', 'b'])
 #print(new_ser.is_monotonic_increasing) 
 
 # Sort the series based on the index
-sorted_ser  = '?'
-#print(sorted_ser) 
+sorted_ser  = new_ser.sort_index()
+print(sorted_ser)
 
 # This will return only the first rows (not the entire series as before)
-#x = sorted_ser['a':'b'] # --> only first two rows 
-#print(x) 
+x = sorted_ser['a':'b'] # --> only first two rows
+print(x)
 # Out:
 # a    1
 # b    2
@@ -136,19 +136,19 @@ sorted_ser  = '?'
 
 # `sorted_ser` is sorted so the following will return the intersection between
 # the slice and the row labels
-#x = sorted_ser['b':'z'] 
-#print(x) 
+x = sorted_ser['b':'z']
+print(x)
 # Out:
 # b    2
 # c    3
 # dtype: int64
 
 # Create a series with an unsorted index 
-ser_sort_inplace  = '?'
+ser_sort_inplace  = pd.Series(data=[1,3,2], index=['a', 'c', 'b'])
 
 # Sort the series. Note that we are not assigning this function call
 # to a new variable.
-#ser_sort_inplace.sort_index(inplace=True) 
-#print(ser_sort_inplace) 
+ser_sort_inplace.sort_index(inplace=True)
+print(ser_sort_inplace)
 
 

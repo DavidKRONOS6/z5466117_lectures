@@ -209,7 +209,9 @@ prc.set_index('Date', inplace=True)
 # New version
 
 prc = pd.read_csv(CSVLOC, parse_dates=['Date'], index_col='Date')
-prc.info()
+# prc.info()
+res = prc.loc['0':'z']
+print(res)
 #
 #
 
@@ -219,13 +221,13 @@ prc.info()
 # ----------------------------------------------------------------------------
 
 # Select all data for a given year in one go
-print(prc.loc['2020'])
-
-# Select all data for a given month
-print(prc.loc['2020-01'])
-
-# Selecting date ranges using strings
-print(prc.loc['2020-01-01':'2020-01-05'])
+# print(prc.loc['2020'])
+#
+# # Select all data for a given month
+# print(prc.loc['2020-01'])
+#
+# # Selecting date ranges using strings
+# print(prc.loc['2020-01-01':'2020-01-05'])
 #
 #
 
@@ -238,6 +240,6 @@ print(prc.loc['2020-01-01':'2020-01-05'])
 
 # compute returns
 rets = prc.loc[:, 'Close'].pct_change()
-print(rets)
+# print(rets)
 
 
